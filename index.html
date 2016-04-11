@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<!-- INDICAMOS QUE VAMOS A USAR CARACTERES ESPECIALES -->
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+	<title>Curso de AngularJS</title>
+	<!-- INCLUIR LA LIBRERIA DE ANGULARJS -->
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<!-- INCLUIMOS LA LIBRERIA DE BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<!-- INCLUIMOS LA LIBRERIA REFERENCIANDO AL MODELO DE DATOS  -->
+	<script type="text/javascript" src="js/lib/app.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="myCtrl">
+		<h1>Filters</h1>
+		<h4>en AngularJS</h4>
+		
+		<p>
+			Filtro de texto mayuscula: {{ firstName | uppercase}}
+			<br>
+			<br>
+			Filtro de texto minuscula: {{lastName | lowercase }}
+		</p>
+		<h3>Filtro de moneda {{12515222}}</h3>
+		<p>
+
+			{{12515222 | currency}}
+			<br>
+			<br>
+			{{12515222 | currency:$:2}}
+		</p>
+			<h3>Filtro de numero</h3>
+		<p>
+			Filtro de numero : {{15000 | number}}
+			<br>
+			Filtro de numero : {{15000 | number:2}}
+		</p>
+		<hr>
+		<div class="form-group">
+			<label for="dato"> Introduce un numero</label> 
+			<input class="form-control" id="dato" ng-model="numero" />			
+		</div>
+		<div>
+			<label class="label label-success">Default Formatting :</label><span>{{ numero|number}}</span>
+			<hr>
+			<label class="label label-primary">No fractions: </label><span>{{numero | number:2}}</span>
+			<hr>
+			<label class="label label-warning">Negative Number: </label><span>{{-numero | number:4}}</span>
+		</div>
+
+		
+	</div>  <!-- container -->
+	
+</body>
+</html>
