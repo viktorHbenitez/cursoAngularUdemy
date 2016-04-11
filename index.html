@@ -13,42 +13,41 @@
 </head>
 <body>
 	<div class="container" ng-controller="myCtrl">
-		<h1>Filters</h1>
+		<h1>ng-Model</h1>
 		<h4>en AngularJS</h4>
-		
-		<p>
-			Filtro de texto mayuscula: {{ firstName | uppercase}}
-			<br>
-			<br>
-			Filtro de texto minuscula: {{lastName | lowercase }}
-		</p>
-		<h3>Filtro de moneda {{12515222}}</h3>
-		<p>
-
-			{{12515222 | currency}}
-			<br>
-			<br>
-			{{12515222 | currency:$:2}}
-		</p>
-			<h3>Filtro de numero</h3>
-		<p>
-			Filtro de numero : {{15000 | number}}
-			<br>
-			Filtro de numero : {{15000 | number:2}}
-		</p>
 		<hr>
-		<div class="form-group">
-			<label for="dato"> Introduce un numero</label> 
-			<input class="form-control" id="dato" ng-model="numero" />			
-		</div>
-		<div>
-			<label class="label label-success">Default Formatting :</label><span>{{ numero|number}}</span>
+		<p>
+			Su nombre: {{nombre | uppercase}}
+			<br>
+			<input type="text" ng-model="nombre" class="form-control" placeholder="Introduce su nombre"/>
+		</p>
+		<p>
+			Seleccione el pais de origen : {{pais}}
+			<select class="form-control" ng-model="pais">
+				<option value="1">Mexico</option>
+				<option value="2">Peru</option>
+				<option value="3">Colombia</option>
+				<option value="4">Noruega</option>
+			</select>
+		</p>
+		<p>
+			Seleccione las opciones: {{opt1 }} {{opt2}}
 			<hr>
-			<label class="label label-primary">No fractions: </label><span>{{numero | number:2}}</span>
+			<input type="checkbox" ng-model="opt1">Opcion 1
+			<br>
+			<input type="checkbox" ng-model="opt2">Opcion 2
+		</p>
+		<h3>Radio Button</h3>
+		<p>
+			Seleccione genero: {{radio1}}
 			<hr>
-			<label class="label label-warning">Negative Number: </label><span>{{-numero | number:4}}</span>
-		</div>
+			<input type="radio" ng-model="radio1" value="M">MASCULINO
+			<br>
+			<input type="radio" ng-model="radio1" value="F">FEMENINO
 
+			
+		</p>
+		
 		
 	</div>  <!-- container -->
 	
